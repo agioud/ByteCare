@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prédiction</title>
+    <link rel="stylesheet" href="/static/css/styles.css">
+    {% load static %}
+</head>
+<body>
+    <div class="center">
+        <h1>Formulaire de prédiction</h1>
+        <form method="post">
+            {% csrf_token %}
+            <div class="inputbox">
+                <label for="age">Entrez votre age :</label>
+                <input type="number" name="age" id="age" required><br>
+            </div>
+
+            <div class="inputbox">
+                <label for="genre">Entrez votre genre (0 = Homme, 1 = Femme) :</label>
+                <input type="number" name="genre" id="genre" required><br>
+            </div>
+
+            <div class="inputbox">
+                <label for="niveau_etudes">Entrez votre niveau d'études : (0=Aucun, 1=Lycée, 2=Licence, 3=Supérieur) :</label>
+                <input type="number" name="niveau_etudes" id="niveau_etudes" required><br>
+            </div>
+
+            <div class="inputbox">
+                <label for="smoking">Êtes-vous fumeur (0 = Non, 1 = Oui) :</label>
+                <input type="number" name="smoking" id="smoking" required><br>
+            </div>
+
+            <div class="inputbox">
+                <label for="alcool">Votre consommation d'alcool par semaine en nombre de verres (de 0 à 20) :</label>
+                <input type="number" name="alcool" id="alcool" required><br>
+            </div>
+
+            <div class="inputbox">
+                <label for="activites_phy">Combien d'heures de sport par semaine (de 0 à 10) :</label>
+                <input type="number" name="activites_phy" id="activites_phy" required><br>
+            </div>
+
+            <div class="inputbox">
+                <label for="diet">La qualité de votre régime alimentaire (de 0 à 10) :</label>
+                <input type="number" name="diet" id="diet" required><br>
+            </div>
+
+            <div class="inputbox">
+                <label for="sleep">La qualité de votre sommeil (de 4 à 10) :</label>
+                <input type="number" name="sleep" id="sleep" required><br>
+            </div>
+
+            <div class="inputbox">
+                <label for="family_hist">Avez-vous des antécédents familiaux (0 = Non, 1 = Oui) :</label>
+                <input type="number" name="family_hist" id="family_hist" required><br>
+            </div>
+
+            <div class="inputbox">
+                <label for="cardio_dis">Avez-vous des problèmes cardio-vasculaires (0 = Non, 1 = Oui) :</label>
+                <input type="number" name="cardio_dis" id="cardio_dis" required><br>
+            </div>
+
+            <div class="inputbox">
+                <label for="head_inju">Avez-vous déjà eu des blessures à la tête (0 = Non, 1 = Oui) :</label>
+                <input type="number" name="head_inju" id="head_inju" required><br>
+            </div>
+
+            <div class="inputbox">
+                <label for="cholesterol">Avez-vous des problèmes de cholestérol (0 = Non, 1 = Oui) :</label>
+                <input type="number" name="cholesterol" id="cholesterol" required><br>
+            </div>
+
+            <div class="inputbox">
+                <label for="mmse">Avez-vous déjà effectué une mini-examination mentale ? (0 = Non, 1 = Oui) :</label>
+                <input type="number" name="mmse" id="mmse" required><br>
+            </div>
+
+            <div class="inputbox">
+                <label for="memo_complain">Vous plaignez-vous souvent de votre mémoire (0 = Non, 1 = Oui) :</label>
+                <input type="number" name="memo_complain" id="memo_complain" required><br>
+            </div>
+
+            <div class="inputbox">
+                <label for="confu">Souffrez-vous de confusion (0 = Non, 1 = Oui) :</label>
+                <input type="number" name="confu" id="confu" required><br>
+            </div>
+
+            <div class="inputbox">
+                <label for="disorient">Souffrez-vous de désorientation (0 = Non, 1 = Oui) :</label>
+                <input type="number" name="disorient" id="disorient" required><br>
+            </div>
+
+            <div class="inputbox">
+                <label for="perso_change">Souffrez-vous de trouble de la personnalité (0 = Non, 1 = Oui) :</label>
+                <input type="number" name="perso_change" id="perso_change" required><br>
+            </div>
+
+            <div class="inputbox">
+                <label for="diff_tasks">Avez-vous des problèmes pour compléter vos tâches du quotidien (0 = Non, 1 = Oui) :</label>
+                <input type="number" name="diff_tasks" id="diff_tasks" required><br>
+            </div>
+
+            <div class="inputbox">
+                <label for="forget_ful">Avez-vous des problèmes de perte de mémoire (0 = Non, 1 = Oui) :</label>
+                <input type="number" name="forget_ful" id="forget_ful" required><br>
+            </div>
+
+            <button type="submit">Prédire</button>
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Résultat</title>
+    <style>
+        /* Style général */
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #eafaf0; /* Un vert très clair pour l'arrière-plan */
+            color: #333;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Conteneur de la carte */
+        .card {
+            background-color: white;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            width: 90%;
+            max-width: 600px;
+            margin: auto;
+            animation: fadeIn 1s ease-out; /* Animation d'apparition */
+        }
+
+        /* Titre */
+        h1 {
+            font-size: 2.2rem;
+            color: #2c8e57; /* Vert moyen pour le titre */
+            margin-bottom: 25px;
+            font-weight: 600;
+        }
+
+        /* Texte principal */
+        p {
+            font-size: 1.1rem;
+            color: #555;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+
+        /* Highlight (valeur de la probabilité) */
+        .highlight {
+            color: #47d88d; /* Vert vif pour la probabilité */
+            font-weight: bold;
+            font-size: 1.6rem;
+        }
+
+        /* Bouton */
+        a {
+            display: inline-block;
+            margin-top: 25px;
+            padding: 12px 30px;
+            background-color: #2c8e57; /* Vert moyen pour le bouton */
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            transition: transform 0.3s ease, background-color 0.3s ease;
+            cursor: pointer;
+        }
+
+        a:hover {
+            background-color: #227a47; /* Un ton plus foncé au survol */
+            transform: translateY(-5px); /* Légère élévation lors du survol */
+        }
+
+        /* Style responsive */
+        @media (max-width: 600px) {
+            .card {
+                width: 90%;
+                padding: 20px;
+            }
+            h1 {
+                font-size: 1.8rem;
+            }
+            p {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <h1>Résultat de la prédiction</h1>
+        <p>Votre probabilité d'être positif est de <span class="highlight">{{ probability|floatformat:2 }}%</span>.</p>
+        <a href="{% url 'predict' %}">Revenir au formulaire</a>
+    </div>
+</body>
+</html>
+
